@@ -1,7 +1,6 @@
 from pymongo import MongoClient
-import os
 
-MONGO_URI = "mongodb+srv://selvaram_db_user:t1whHfT9bzZtAtl6@enrichdatabase.eof7ta0.mongodb.net/?appName=Enrichdatabase"
+MONGO_URI = "mongodb+srv://aurenzalabs_db_user:<LB7T3i8iUiQhf2vW>@aurenzadb.txnjw8c.mongodb.net/?appName=Aurenzadb"
 
 client = MongoClient(MONGO_URI)
 db = client["aurenza_erp"]
@@ -9,4 +8,3 @@ db = client["aurenza_erp"]
 users_col = db["users"]
 projects_col = db["projects"]
 expenses_col = db["expenses"]
-audit_col = db["audit_logs"]

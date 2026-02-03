@@ -15,7 +15,7 @@ def login(data: dict):
     user = users_col.find_one({"email": data["email"]})
     if not user or not verify_password(data["password"], user["password"]):
         raise HTTPException(status_code=401)
-    
+
     token = create_token({
         "user_id": str(user["_id"]),
         "role": user["role"]

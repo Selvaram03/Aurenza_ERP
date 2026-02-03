@@ -12,3 +12,13 @@ def create_project(data: dict):
         "status": "ACTIVE"
     })
     return {"msg": "Project created"}
+
+@router.get("/projects/list")
+def list_projects():
+    return [{
+        "id": str(p["_id"]),
+        "project_name": p["project_name"],
+        "client": p["client"],
+        "value": p["value"],
+        "status": p["status"]
+    } for p in projects_col.find()]
